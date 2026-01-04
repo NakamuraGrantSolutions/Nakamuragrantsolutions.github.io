@@ -1,223 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Nakamura Grant Solutions</title>
-  <meta name="description" content="Meet the team behind Nakamura Grant Solutions — our staff, philosophy, and expertise." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>About | Nakamura Grant Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn more about the team, philosophy, and mission behind Nakamura Grant Solutions.">
 
   <style>
-    :root{
-      --bg: #0b0f1a;
-      --bg-2: #0f1628;
-      --card: #121a2e;
-      --text: #e7ecf6;
-      --muted: #b9c2d8;
-      --brand-1: #5ee1d6;
-      --brand-2: #7a86ff;
-      --brand-3: #42d392;
-      --line: rgba(255,255,255,0.08);
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --radius: 16px;
-      --radius-lg: 24px;
-      --maxw: 1120px;
-      --link-color: var(--text); /* consistent link color */
-      --link-hover: #9fded1; /* subtle hover tint if desired */
+    :root {
+      --bg: #f7f8fb;
+      --bg-alt: #ffffff;
+      --primary: #184e77;
+      --primary-soft: #e1edf6;
+      --accent: #f4a261;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #dde3ee;
+      --shadow-soft: 0 14px 28px rgba(15, 23, 42, 0.08);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+      --transition-fast: 0.18s ease-out;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    body{
+    body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: var(--font-body);
+      background: radial-gradient(circle at top left, #eef3ff 0, #f7f8fb 38%, #fdfdfd 100%);
       color: var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% 0%, #162042 0%, rgba(22,32,66,0) 60%),
-        radial-gradient(1000px 500px at 80% 10%, #0f2c3a 0%, rgba(15,44,58,0) 60%),
-        linear-gradient(180deg, var(--bg), var(--bg-2));
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(247, 248, 251, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.8);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .nav-links a {
+      margin-left: 1.4rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      background: var(--primary);
+      color: #f9fafb;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 10px 20px rgba(24, 78, 119, 0.25);
+      border: 1px solid transparent;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .nav-cta:hover {
+      background: #123653;
+      transform: translateY(-1px);
+    }
+
+    /* PAGE WRAPPER */
+    .shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.8rem 1.2rem 3.2rem;
+    }
+
+    /* PAGE HERO */
+    .page-hero {
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+
+    .page-hero h1 {
+      font-size: 2.2rem;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+    }
+
+    .page-hero p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
       line-height: 1.6;
     }
 
-    /* Link styling: keep color consistent for all states including visited */
-    a {
-      color: var(--link-color);
+    /* SECTION TITLES */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 2.4rem;
+      margin-bottom: 0.6rem;
+      color: #0f172a;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+    }
+
+    /* TEAM GRID */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+      margin-top: 1.4rem;
+    }
+
+    /* FLIP CARDS */
+    .flip-card {
+      background: transparent;
+      width: 100%;
+      height: 420px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.7s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      background: #ffffff;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .flip-card-front img {
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      overflow-y: auto;
+      padding: 1.4rem;
+    }
+
+    .team-role {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      margin-top: 0.2rem;
+    }
+
+    .flip-card-back p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    /* CTA PANEL */
+    .cta-panel {
+      margin-top: 3rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #184e77, #2a9d8f);
+      padding: 2rem;
+      color: #f9fafb;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+      text-align: center;
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .cta-panel p {
+      margin: 0 auto 1.2rem;
+      max-width: 600px;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      border-radius: var(--radius-pill);
+      padding: 0.7rem 1.6rem;
+      background: #f9fafb;
+      color: #0f172a;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid rgba(15, 23, 42, 0.07);
       text-decoration: none;
-      transition: color 120ms ease;
-    }
-    a:visited {
-      color: var(--link-color); /* prevents different color after visit */
-    }
-    a:hover, a:focus {
-      color: var(--link-hover);
-      outline: none;
-    }
-    a:active {
-      color: var(--link-hover);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     }
 
-    .container{ width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-    header{ position: sticky; top: 0; background: rgba(12,16,28,0.8); border-bottom: 1px solid var(--line); z-index: 20; }
-    .nav{ display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-    .brand{ display: flex; align-items: center; gap: 14px; font-weight: 700; }
-    .logo{ width: 36px; height: 36px; border-radius: 12px; background: conic-gradient(from 180deg, var(--brand-1), var(--brand-2), var(--brand-3), var(--brand-1)); }
-
-    /* Navigation menu */
-    .menu { display: flex; gap: 18px; align-items: center; }
-    .menu a { font-weight: 500; color: var(--link-color); }
-    .menu .cta {
-      background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
-      color: #07101a;
-      padding: 8px 12px;
-      border-radius: 10px;
-      font-weight: 700;
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.4);
     }
 
-    section{ padding: 72px 0; }
-    .section-title{ font-family: Montserrat, Inter, sans-serif; font-weight: 700; font-size: 28px; margin: 0 0 10px; }
-    .section-sub{ color: var(--muted); margin: 0 0 28px; max-width: 760px; }
+    /* FOOTER */
+    footer {
+      margin-top: 3rem;
+      padding: 1.6rem 1.2rem;
+      background: #f9fafb;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
 
-    .about{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); }
-    .card{ background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-    /* Staff grid */
-    .staff-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-    .staff-card{ background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; text-align: center; box-shadow: var(--shadow); }
-    .staff-card img{ width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; }
-    .staff-card h3{ margin: 8px 0 6px; font-weight: 700; }
-    .staff-card p{ color: var(--muted); font-size: 15px; }
+    .footer-links,
+    .footer-social {
+      display: flex;
+      gap: 1.2rem;
+    }
 
-    footer{ border-top: 1px solid var(--line); margin-top: 64px; padding: 28px 0; color: var(--muted); }
-    .footer-grid{ display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 18px; }
-    .links{ display: grid; gap: 8px; }
-    .social{ display: flex; gap: 12px; }
-    .social a{ width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; color: var(--muted); }
+    .footer-links a,
+    .footer-social a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
 
-    @media(max-width:980px){ .about{ grid-template-columns: 1fr; } .footer-grid{ grid-template-columns: 1fr; } }
+    .footer-links a:hover,
+    .footer-social a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 700px) {
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Nakamura Grant Solutions</span>
-      </div>
-      <nav class="menu" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="Services.html">Services</a>
-        <a href="About.html">About</a>
-        <a href="NCC.html">Nakamura Community Center</a>
-        <!-- Schedule a consultation mailto link -->
-        <a class="cta" href="mailto:nakamuragrantsolutions@gmail.com">Schedule a consultation</a>
-      </nav>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="placeholder-logo.png" alt="Company Logo">
+      <span>Nakamura Grant Solutions</span>
     </div>
-  </header>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="About.html">About</a>
+      <a href="NakamuraCommunityCenter.html">Nakamura Community Center</a>
+      <a href="https://calendly.com/nakamuragrantsolutions/30min" class="nav-cta" target="_blank">Schedule a consultation</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <div class="section-title">About Nakamura Grant Solutions</div>
-      <p class="section-sub">
-        We exist to make the complex world of grants navigable. By combining transparent strategy, 
-        human‑centered storytelling, and disciplined execution, we help organizations secure funding 
-        without compromising their mission.
-      </p>
+<div class="shell">
 
-      <!-- Staff Section -->
-      <div class="section-title" style="margin-top:40px;">Meet Our Team</div>
-      <p class="section-sub">The people behind our mission — bringing expertise, creativity, and dedication to every project.</p>
-      <div class="staff-grid">
-        <div class="staff-card">
-          <img src="Makayla.jpg" alt="Makayla Nakamura">
-          <h3>Makayla Nakamura</h3>
-          <p>CEO and Lead Writer</p>
-          <p>Makayla is the CEO and lead writer at Nakamura Grant Solutions, bringing a rare blend of strategic vision, community‑centered leadership, and narrative clarity to every project. She holds a master’s degree in Resilient & Sustainable Communities, grounding her work in systems thinking and long‑term impact.
-Before founding NGS, Milo worked with non‑profit organizations, where she honed her ability to translate complex challenges into practical solutions and compelling stories. Today, she leads the company with a steady commitment to equity, sustainability, and meaningful change—ensuring every client’s voice is heard, understood, and elevated.</p>
-        </div>
-        <div class="staff-card">
-          <img src="Tate.jpg" alt="Tate Nakamura">
-          <h3>Tate Nakamura</h3>
-          <p>COO and Lead Strategist</p>
-          <p>Andrew serves as the Chief Operating Officer at Nakamura Grant Solutions, where he brings a disciplined, solutions‑driven approach to organizational strategy and day‑to‑day operations. He holds an MBA and is a certified Scrum professional, blending business acumen with agile methodology to keep complex projects moving with clarity and momentum.
-A U.S. military veteran, Andrew’s leadership style is grounded in integrity, adaptability, and a deep respect for mission‑focused teamwork. His background allows him to navigate high‑pressure environments with calm precision, ensuring clients receive thoughtful guidance and consistently reliable execution.</p>
-        </div>
-        <div class="staff-card">
-          <img src="Heather.jpg" alt="Heather Nakamura">
-          <h3>Heather Nakamura</h3>
-          <p>CFO and Lead Financial Strategist</p>
-          <p>Heather is the Chief Financial Officer and lead financial strategist at Nakamura Grant Solutions, where she brings precision, clarity, and long‑range thinking to every operational decision. With a bachelor’s degree in accounting, she blends technical expertise with a systems‑level understanding of how organizations grow, adapt, and sustain themselves.
-Her background in financial management, organizational design, and practical logistics allows her to build structures that are both stable and flexible—supporting NGS’s mission while ensuring every project is grounded in transparency and fiscal responsibility. Heather’s approach is analytical, principled, and deeply aligned with creating workplaces that function with fairness and integrity.</p>
-        </div>
-      </div>
-
-      <!-- Philosophy & Expertise -->
-      <div class="about" style="margin-top:48px;">
-        <div class="card">
-          <h3>Our Philosophy</h3>
-          <p>
-            Every proposal is more than paperwork — it’s a story of vision and impact. 
-            We align funder priorities with your mission while preserving authenticity.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Our Expertise</h3>
-          <p class="meta">Nonprofits • Startups • Research teams • Social enterprises</p>
-          <p>
-            From discovery to reporting, we provide end‑to‑end support across the grant lifecycle. 
-            Whether you need a single sprint or a long‑term partner, our tailored approach ensures 
-            your goals are met with clarity and confidence.
-          </p>
-        </div>
-      </div>
-    </div>
+  <!-- HERO -->
+  <section class="page-hero">
+    <h1>About Nakamura Grant Solutions</h1>
+    <p>We exist to make the complex world of grants navigable. By combining transparent strategy, human‑centered storytelling, and disciplined execution, we help organizations secure funding without compromising their mission.</p>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <div style="font-weight:700; margin-bottom:8px;">Nakamura Grant Solutions</div>
-        <div style="color:var(--muted); max-width:520px;">
-          We help organizations secure funding without compromising their mission. Contact us to schedule a consultation or learn more about our services.
-        </div>
-      </div>
+  <!-- TEAM SECTION -->
+  <h2 class="section-title">Meet Our Team</h2>
+  <p class="section-subtitle">The people behind our mission — bringing expertise, creativity, and dedication to every project.</p>
 
-      <div class="links">
-        <div style="font-weight:700;">Quick links</div>
-        <a href="index.html">Home</a>
-        <a href="Services.html">Services</a>
-        <a href="About.html">About</a>
-        <a href="NCC.html">Nakamura Community Center</a>
-        <a href="contact.html">Contact</a>
-        <a href="mailto:nakamuragrantsolutions@gmail.com">Schedule a consultation</a>
-      </div>
+  <div class="team-grid">
 
-      <div>
-        <div style="font-weight:700; margin-bottom:8px;">Follow</div>
-        <div class="social">
-          <a href="#" aria-label="Twitter">T</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Instagram">IG</a>
+    <!-- MAKAYLA -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+          <img src="Makayla.jpg" alt="Makayla Nakamura">
+          <h3>Makayla Nakamura</h3>
+          <div class="team-role">CEO and Lead Writer</div>
         </div>
+
+        <div class="flip-card-back">
+          <h3>Makayla Nakamura</h3>
+          <div class="team-role">CEO and Lead Writer</div>
+          <p>Makayla is the CEO and lead writer at Nakamura Grant Solutions, bringing a rare blend of strategic vision, community‑centered leadership, and narrative clarity to every project. She holds a master’s degree in Resilient & Sustainable Communities, grounding her work in systems thinking and long‑term impact. Before founding NGS, Milo worked with non‑profit organizations, where she honed her ability to translate complex challenges into practical solutions and compelling stories. Today, she leads the company with a steady commitment to equity, sustainability, and meaningful change—ensuring every client’s voice is heard, understood, and elevated.</p>
+        </div>
+
       </div>
     </div>
 
-    <div class="container" style="margin-top:18px; display:flex; justify-content:space-between; align-items:center;">
-      <div style="color:var(--muted); font-size:13px;">© <span id="year"></span> Nakamura Grant Solutions. All rights reserved.</div>
-      <div style="color:var(--muted); font-size:13px;">Made with care.</div>
+    <!-- TATE -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+          <img src="Tate.jpg" alt="Tate Nakamura">
+          <h3>Tate Nakamura</h3>
+          <div class="team-role">COO and Lead Strategist</div>
+        </div>
+
+        <div class="flip-card-back">
+          <h3>Tate Nakamura</h3>
+          <div class="team-role">COO and Lead Strategist</div>
+          <p>Andrew serves as the Chief Operating Officer at Nakamura Grant Solutions, where he brings a disciplined, solutions‑driven approach to organizational strategy and day‑to‑day operations. He holds an MBA and is a certified Scrum professional, blending business acumen with agile methodology to keep complex projects moving with clarity and momentum. A U.S. military veteran, Andrew’s leadership style is grounded in integrity, adaptability, and a deep respect for mission‑focused teamwork. His background allows him to navigate high‑pressure environments with calm precision, ensuring clients receive thoughtful guidance and consistently reliable execution.</p>
+        </div>
+
+      </div>
     </div>
-  </footer>
 
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- HEATHER -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
 
-    // Optional: if you want to ensure external links open in new tab
-    // document.querySelectorAll('a[href^="http"]').forEach(a => a.setAttribute('target','_blank'));
-  </script>
+        <div class="flip-card-front">
+          <img src="Heather.jpg" alt="Heather Nakamura">
+          <h3>Heather Nakamura</h3>
+          <div class="team-role">CFO and Lead Financial Strategist</div>
+        </div>
+
+        <div class="flip-card-back">
+          <h3>Heather Nakamura</h3>
+          <div class="team-role">CFO and Lead Financial Strategist</div>
+          <p>Heather is the Chief Financial Officer and lead financial strategist at Nakamura Grant Solutions, where she brings precision, clarity, and long‑range thinking to every operational decision. With a bachelor’s degree in accounting, she blends technical expertise with a systems‑level understanding of how organizations grow, adapt, and sustain themselves. Her background in financial management, organizational design, and practical logistics allows her to build structures that are both stable and flexible—supporting NGS’s mission while ensuring every project is grounded in transparency and fiscal responsibility. Heather’s approach is analytical, principled, and deeply aligned with creating workplaces that function with fairness and integrity.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <h2 class="section-title">Our Philosophy</h2>
+  <p class="section-subtitle">Every proposal is more than paperwork — it’s a story of vision and impact. We align funder priorities with your mission while preserving authenticity.</p>
+
+  <!-- EXPERTISE -->
+  <h2 class="section-title">Our Expertise</h2>
+  <p class="section-subtitle">Nonprofits • Startups • Research teams • Social enterprises</p>
+
+  <p class="section-subtitle">From discovery to reporting, we provide end‑to‑end support across the grant lifecycle. Whether you need a single sprint or a long‑term partner, our tailored approach ensures your goals are met with clarity and confidence.</p>
+
+  <!-- CTA PANEL -->
+  <div class="cta-panel">
+    <h2>Nakamura Grant Solutions</h2>
+    <p>We help organizations secure funding without compromising their mission. Contact us to schedule a consultation or learn more about our services.</p>
+    <a href="https://calendly.com/nakamuragrantsolutions/30min" target="_blank" class="cta-button">Schedule a consultation →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="About.html">About</a>
+      <a href="NakamuraCommunityCenter.html">Nakamura Community Center</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="#" target="_blank">T</a>
+      <a href="#" target="_blank">in</a>
+      <a href="#" target="_blank">IG</a>
+    </div>
+
+    <div class="footer-copy">
+      © 2026 Nakamura Grant Solutions. All rights reserved. Made with care.
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
-
-
