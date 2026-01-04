@@ -17,8 +17,8 @@
       --muted: #6b7280;
       --border: #dde3ee;
       --shadow-soft: 0 14px 28px rgba(15, 23, 42, 0.08);
-      --radius-lg: 14px;
-      --radius-md: 10px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
       --radius-pill: 999px;
       --transition-fast: 0.18s ease-out;
       --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -124,49 +124,102 @@
       line-height: 1.6;
     }
 
-    /* SECTION HEADERS */
-    .section-block {
-      margin-top: 3rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-      color: #0f172a;
-    }
-
-    .section-subtitle {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 700px;
-      line-height: 1.6;
-      margin-bottom: 1.4rem;
-    }
-
-    /* SERVICE LISTS */
-    .service-list {
-      background: #fff;
-      border-radius: 14px;
-      padding: 1.4rem;
+    /* SERVICE PANELS */
+    .service-panel {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
       border: 1px solid var(--border);
       box-shadow: var(--shadow-soft);
-      margin-bottom: 1.6rem;
+      margin-bottom: 2.4rem;
     }
 
-    .service-list h3 {
+    .service-panel h2 {
       margin-top: 0;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: #0f172a;
     }
 
-    .service-list ul {
-      margin: 0;
-      padding-left: 1.2rem;
+    .service-panel p {
+      font-size: 0.95rem;
       color: var(--muted);
+      margin-bottom: 1.4rem;
       line-height: 1.6;
-      font-size: 0.92rem;
+    }
+
+    /* CHIP GRID */
+    .chip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .chip {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+      transition: transform var(--transition-fast);
+    }
+
+    .chip:hover {
+      transform: translateY(-3px);
+    }
+
+    .chip-title {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .chip-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* CTA PANEL */
+    .cta-panel {
+      margin-top: 3rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #184e77, #2a9d8f);
+      padding: 2rem;
+      color: #f9fafb;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+      text-align: center;
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .cta-panel p {
+      margin: 0 auto 1.2rem;
+      max-width: 600px;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      border-radius: var(--radius-pill);
+      padding: 0.7rem 1.6rem;
+      background: #f9fafb;
+      color: #0f172a;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.4);
     }
 
     /* FOOTER */
@@ -242,124 +295,192 @@
     <p>We help organizations restructure, stabilize, and secure funding — not just write grants. Our work strengthens the systems behind your programs so your team can operate with clarity and confidence.</p>
   </section>
 
-  <!-- SECTION 1: ORGANIZATIONAL RESTRUCTURING -->
-  <section class="section-block">
-    <h2 class="section-title">Organizational Restructuring for Funding Stability</h2>
-    <p class="section-subtitle">We help teams redesign the internal systems that support programs, funding, and long‑term sustainability.</p>
+  <!-- PANEL 1 -->
+  <div class="service-panel">
+    <h2>Organizational Restructuring for Funding Stability</h2>
+    <p>We help teams redesign the internal systems that support programs, funding, and long‑term sustainability.</p>
 
-    <div class="service-list">
-      <h3>What this includes:</h3>
-      <ul>
-        <li>Program structure audits to identify friction points and duplication</li>
-        <li>Workflow redesign to improve clarity and reduce bottlenecks</li>
-        <li>Role and responsibility mapping for staff and leadership</li>
-        <li>Decision‑making frameworks that reduce confusion and conflict</li>
-        <li>Budget alignment with funder expectations and program goals</li>
-        <li>Multi‑year funding strategy tied to organizational capacity</li>
-        <li>Board communication support during restructuring</li>
-        <li>Implementation support to ensure changes stick</li>
-      </ul>
+    <div class="chip-grid">
+
+      <div class="chip">
+        <div class="chip-title">Program Structure Audit</div>
+        <div class="chip-body">Identify friction points, duplication, and gaps affecting delivery and funding.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Workflow Redesign</div>
+        <div class="chip-body">Rebuild internal processes so staff can work with clarity and confidence.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Role & Responsibility Mapping</div>
+        <div class="chip-body">Clarify ownership, decision‑making, and communication pathways.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Decision‑Making Frameworks</div>
+        <div class="chip-body">Reduce confusion and conflict with clear, consistent decision structures.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Budget Alignment</div>
+        <div class="chip-body">Ensure financial structures match funder expectations and program goals.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Multi‑Year Funding Strategy</div>
+        <div class="chip-body">Build a sustainable roadmap tied to organizational capacity.</div>
+      </div>
+
     </div>
-  </section>
+  </div>
 
-  <!-- SECTION 2: FUNDING & GRANT STRATEGY -->
-  <section class="section-block">
-    <h2 class="section-title">Funding & Grant Strategy</h2>
-    <p class="section-subtitle">We build the systems, strategy, and structure behind successful grant seeking — far beyond proposal writing.</p>
+  <!-- PANEL 2 -->
+  <div class="service-panel">
+    <h2>Funding & Grant Strategy</h2>
+    <p>We build the systems, strategy, and structure behind successful grant seeking — far beyond proposal writing.</p>
 
-    <div class="service-list">
-      <h3>What this includes:</h3>
-      <ul>
-        <li>Funding landscape analysis and opportunity identification</li>
-        <li>Multi‑year grant calendar development</li>
-        <li>Case‑for‑support and organizational narrative development</li>
-        <li>Program logic models and theory‑of‑change development</li>
-        <li>Budget narratives and funder‑aligned financial storytelling</li>
-        <li>Grant readiness assessments and gap analysis</li>
-        <li>Grant systems setup (templates, file structure, workflows)</li>
-        <li>Post‑award reporting systems and compliance support</li>
-        <li>Partnership development for collaborative grants</li>
-      </ul>
+    <div class="chip-grid">
+
+      <div class="chip">
+        <div class="chip-title">Funding Landscape Analysis</div>
+        <div class="chip-body">Identify aligned opportunities and strategic funding pathways.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Grant Calendar Development</div>
+        <div class="chip-body">Plan a multi‑year approach to funding cycles and deadlines.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Case‑for‑Support Development</div>
+        <div class="chip-body">Craft a compelling organizational narrative funders can trust.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Logic Models & Theory of Change</div>
+        <div class="chip-body">Strengthen program clarity and funder alignment.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Grant Readiness Assessments</div>
+        <div class="chip-body">Identify gaps in systems, documentation, and capacity.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Grant Systems Setup</div>
+        <div class="chip-body">Templates, workflows, and file structures that keep teams organized.</div>
+      </div>
+
     </div>
-  </section>
+  </div>
 
-  <!-- SECTION 3: GRANT PROPOSAL DEVELOPMENT -->
-  <section class="section-block">
-    <h2 class="section-title">Grant Proposal Development</h2>
-    <p class="section-subtitle">We develop compelling, funder‑aligned proposals that clearly communicate your impact and capacity.</p>
+  <!-- PANEL 3 -->
+  <div class="service-panel">
+    <h2>Grant Proposal Development</h2>
+    <p>We develop compelling, funder‑aligned proposals that clearly communicate your impact and capacity.</p>
 
-    <div class="service-list">
-      <h3>What this includes:</h3>
-      <ul>
-        <li>Full proposal drafting from concept to submission</li>
-        <li>Editing and narrative refinement for clarity and impact</li>
-        <li>Budget development and justification</li>
-        <li>Attachment preparation and compliance review</li>
-        <li>Funder‑specific tailoring and alignment</li>
-        <li>Review and submission support</li>
-      </ul>
+    <div class="chip-grid">
+
+      <div class="chip">
+        <div class="chip-title">Full Proposal Drafting</div>
+        <div class="chip-body">From concept to submission, tailored to each funder.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Narrative Refinement</div>
+        <div class="chip-body">Editing for clarity, impact, and alignment.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Budget Development</div>
+        <div class="chip-body">Build funder‑ready budgets and justification narratives.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Attachment Preparation</div>
+        <div class="chip-body">Ensure compliance and completeness for every submission.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Funder Tailoring</div>
+        <div class="chip-body">Customize proposals to match funder priorities.</div>
+      </div>
+
     </div>
-  </section>
+  </div>
 
-  <!-- SECTION 4: STRATEGIC COMMUNICATION -->
-  <section class="section-block">
-    <h2 class="section-title">Strategic Communication & Stakeholder Alignment</h2>
-    <p class="section-subtitle">We help you communicate change, impact, and direction to the people who matter most.</p>
+  <!-- PANEL 4 -->
+  <div class="service-panel">
+    <h2>Strategic Communication & Stakeholder Alignment</h2>
+    <p>We help you communicate change, impact, and direction to the people who matter most.</p>
 
-    <div class="service-list">
-      <h3>What this includes:</h3>
-      <ul>
-        <li>Board‑ready decks and presentations</li>
-        <li>Funder‑ready summaries and program descriptions</li>
-        <li>Impact storytelling and narrative development</li>
-        <li>Internal communication during restructuring</li>
-        <li>Change‑management messaging</li>
-      </ul>
+    <div class="chip-grid">
+
+      <div class="chip">
+        <div class="chip-title">Board‑Ready Decks</div>
+        <div class="chip-body">Clear, compelling presentations for decision‑makers.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Funder Summaries</div>
+        <div class="chip-body">Concise, high‑impact descriptions of programs and outcomes.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Impact Storytelling</div>
+        <div class="chip-body">Narratives that highlight your value and results.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Internal Communication</div>
+        <div class="chip-body">Support during restructuring and organizational change.</div>
+      </div>
+
     </div>
-  </section>
+  </div>
 
-  <!-- SECTION 5: IMPLEMENTATION SUPPORT -->
-  <section class="section-block">
-    <h2 class="section-title">Implementation Support</h2>
-    <p class="section-subtitle">We stay with you through the rollout — ensuring your plan becomes reality, not a document on a shelf.</p>
+  <!-- PANEL 5 -->
+  <div class="service-panel">
+    <h2>Implementation Support</h2>
+    <p>We stay with you through the rollout — ensuring your plan becomes reality, not a document on a shelf.</p>
 
-    <div class="service-list">
-      <h3>What this includes:</h3>
-      <ul>
-        <li>Weekly or monthly advisory support</li>
-        <li>Staff coaching and capacity building</li>
-        <li>Board communication preparation</li>
-        <li>Real‑time troubleshooting during implementation</li>
-        <li>Accountability check‑ins</li>
-        <li>Adjustments to the plan as conditions change</li>
-      </ul>
+    <div class="chip-grid">
+
+      <div class="chip">
+        <div class="chip-title">Advisory Support</div>
+        <div class="chip-body">Weekly or monthly guidance tailored to your needs.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Staff Coaching</div>
+        <div class="chip-body">Build confidence and capacity across your team.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Board Communication Prep</div>
+        <div class="chip-body">Help leaders communicate change effectively.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Real‑Time Troubleshooting</div>
+        <div class="chip-body">Support through challenges as they arise.</div>
+      </div>
+
+      <div class="chip">
+        <div class="chip-title">Accountability Check‑Ins</div>
+        <div class="chip-body">Keep momentum strong and goals on track.</div>
+      </div>
+
     </div>
-  </section>
+  </div>
 
-  <!-- SECTION 6: OPTIONAL ADD-ONS -->
-  <section class="section-block">
-    <h2 class="section-title">Additional Support</h2>
-    <p class="section-subtitle">These services can be added to any engagement or provided as standalone support.</p>
-
-    <div class="service-list">
-      <h3>Optional add‑ons:</h3>
-      <ul>
-        <li>Partnership mapping and outreach</li>
-        <li>Research support for grants or program development</li>
-        <li>Data collection setup and impact measurement frameworks</li>
-        <li>Drafting policies and procedures</li>
-        <li>Program design and refinement</li>
-        <li>Budget scenario planning</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section-block">
-    <h2 class="section-title">Ready to strengthen your organization?</h2>
-    <p class="section-subtitle">Let’s talk about what needs to change — and how we can help you get there.</p>
-    <a href="https://calendly.com/nakamuragrantsolutions/30min" target="_blank" class="nav-cta">Schedule a Consultation</a>
-  </section>
+  <!-- CTA PANEL -->
+  <div class="cta-panel">
+    <h2>Let’s talk about the structure behind your next grant cycle.</h2>
+    <p>If you're preparing for a major proposal, restructuring your team, or navigating a funding shift, we can help you clarify what needs to change — and how to communicate it.</p>
+    <a href="https://calendly.com/nakamuragrantsolutions/30min" target="_blank" class="cta-button">Schedule a Consultation →</a>
+  </div>
 
 </div>
 
