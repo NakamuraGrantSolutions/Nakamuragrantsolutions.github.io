@@ -1,215 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services — Nakamura Grant Solutions</title>
-  <meta name="description" content="Explore the services offered by Nakamura Grant Solutions — grant writing, research, partnerships, and impact reporting." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>Nakamura Grant Solutions | Strategic Restructuring & Funding Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nakamura Grant Solutions helps organizations restructure for resilience, sustainability, and growth through strategic planning, operational redesign, and funding alignment.">
   <style>
-    :root{
-      --bg: #0b0f1a;
-      --bg-2: #0f1628;
-      --card: #121a2e;
-      --text: #e7ecf6;
-      --muted: #b9c2d8;
-      --brand-1: #5ee1d6;
-      --brand-2: #7a86ff;
-      --brand-3: #42d392;
-      --line: rgba(255,255,255,0.08);
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --radius: 16px;
-      --radius-lg: 24px;
-      --maxw: 1120px;
-      --link-color: var(--text);
-      --link-hover: #9fded1;
+    :root {
+      --bg: #f7f8fb;
+      --bg-alt: #ffffff;
+      --primary: #184e77;
+      --primary-soft: #e1edf6;
+      --accent: #f4a261;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #dde3ee;
+      --shadow-soft: 0 14px 28px rgba(15, 23, 42, 0.08);
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-pill: 999px;
+      --transition-fast: 0.18s ease-out;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    /* Base */
-    html,body{ height:100%; }
-    body{
+    body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      font-family: var(--font-body);
+      background: radial-gradient(circle at top left, #eef3ff 0, #f7f8fb 38%, #fdfdfd 100%);
       color: var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% 0%, #162042 0%, rgba(22,32,66,0) 60%),
-        radial-gradient(1000px 500px at 80% 10%, #0f2c3a 0%, rgba(15,44,58,0) 60%),
-        linear-gradient(180deg, var(--bg), var(--bg-2));
-      line-height: 1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Links: keep color consistent for all states including visited */
-    a {
-      color: var(--link-color);
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(247, 248, 251, 0.92);
+      border-bottom: 1px solid rgba(221, 227, 238, 0.8);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .nav-links a {
+      margin-left: 1.4rem;
+      color: var(--muted);
       text-decoration: none;
-      transition: color 120ms ease;
+      font-size: 0.9rem;
+      transition: color var(--transition-fast);
     }
-    a:visited { color: var(--link-color); }
-    a:hover, a:focus { color: var(--link-hover); outline: none; }
-    a:active { color: var(--link-hover); }
 
-    .container{ width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
-    header{ position: sticky; top: 0; background: rgba(12,16,28,0.85); border-bottom: 1px solid var(--line); z-index: 20; backdrop-filter: blur(6px); }
-    .nav{ display: flex; justify-content: space-between; align-items: center; padding: 14px 0; gap: 16px; }
-    .brand{ display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--text); }
-    .brand img.logo { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; display: block; box-shadow: 0 8px 20px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
-    /* Navigation menu */
-    .menu { display: flex; gap: 18px; align-items: center; }
-    .menu a { font-weight: 500; color: var(--link-color); }
-    .menu .cta {
-      background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
-      color: #07101a;
-      padding: 8px 12px;
-      border-radius: 10px;
-      font-weight: 700;
+    .nav-cta {
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      background: var(--primary);
+      color: #f9fafb;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 10px 20px rgba(24, 78, 119, 0.25);
+      border: 1px solid transparent;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .nav-cta:hover {
+      background: #123653;
+      transform: translateY(-1px);
+    }
+
+    .shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.8rem 1.2rem 3.2rem;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1.1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 2.9vw, 2.6rem);
+      line-height: 1.12;
+      margin: 0 0 0.9rem;
+      color: #0f172a;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-pill {
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.9rem;
+      background: rgba(244, 162, 97, 0.09);
+      font-size: 0.78rem;
+      color: #92400e;
+      border: 1px solid rgba(248, 180, 107, 0.65);
+      margin-right: 0.5rem;
       display: inline-block;
     }
 
-    /* Hero */
-    .hero { padding: 56px 0 36px; }
-    .hero-inner { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; gap: 20px; padding: 0 24px; box-sizing: border-box; }
-    .hero-image { width: 160px; height: 160px; object-fit: cover; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); flex: 0 0 auto; }
-    .hero-copy { flex: 1; }
-    .hero-title { font-family: Montserrat, Inter, sans-serif; font-size: 32px; margin: 0 0 8px; font-weight: 700; line-height: 1.05; }
-    .hero-sub { color: var(--muted); margin: 0; font-size: 15px; }
+    .btn-primary {
+      border-radius: var(--radius-pill);
+      padding: 0.65rem 1.5rem;
+      background: var(--primary);
+      color: #f9fafb;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
 
-    /* Cards */
-    section#services { padding-bottom: 48px; }
-    .cards{ display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 28px; }
-    .card{ background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); transition: transform 160ms ease, box-shadow 160ms ease; }
-    .card:hover{ transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
-    .icon{ width: 42px; height: 42px; border-radius: 12px; margin-bottom: 12px; display: grid; place-items: center; font-weight: 700; color: #0d1321; background: linear-gradient(135deg, var(--brand-2), var(--brand-1)); box-shadow: 0 8px 20px rgba(94,225,214,0.18); }
-    .card h3{ font-weight: 700; margin: 8px 0 6px; }
-    .card p{ color: var(--muted); margin: 0 0 14px; }
-    .meta{ color: #a8b2ca; font-size: 14px; }
+    .btn-primary:hover {
+      background: #0f2940;
+      transform: translateY(-1px);
+    }
 
-    /* Footer */
-    footer{ border-top: 1px solid var(--line); margin-top: 64px; padding: 28px 0; color: var(--muted); }
-    .footer-grid{ display: grid; grid-template-columns: 1.2fr 0.9fr 1fr; gap: 18px; align-items:start; }
-    .links{ display: grid; gap: 8px; }
-    .social{ display: flex; gap: 12px; }
-    .social a{ width: 36px; height: 36px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight:700; }
+    /* HERO PANEL */
+    .hero-panel {
+      background: radial-gradient(circle at top left, #e1edf6 0, #ffffff 60%);
+      border-radius: 26px;
+      padding: 1.4rem;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: var(--shadow-soft);
+    }
 
-    /* Responsive */
-    @media(max-width:980px){
-      .hero-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .footer-grid{ grid-template-columns: 1fr; }
-      .brand img.logo { width: 40px; height: 40px; }
+    .panel-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .panel-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+    }
+
+    .panel-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 0.7rem;
+      border: 1px solid var(--border);
+      line-height: 1.5;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 1.4rem;
+    }
+
+    /* SERVICES */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+      transition: transform var(--transition-fast);
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .service-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .service-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* PROCESS */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+    }
+
+    .step {
+      background: #fff;
+      border-radius: 14px;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
+
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-body {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* CTA */
+    .cta-banner {
+      margin-top: 2.4rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #184e77, #2a9d8f);
+      padding: 1.4rem;
+      color: #f9fafb;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.6rem;
+      align-items: center;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.4);
+    }
+
+    .cta-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .cta-body {
+      font-size: 0.9rem;
+      opacity: 0.95;
+      max-width: 520px;
+    }
+
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border-radius: var(--radius-pill);
+      padding: 0.25rem 0.7rem;
+      background: rgba(15, 23, 42, 0.45);
+      font-size: 0.76rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-button {
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.3rem;
+      background: #f9fafb;
+      color: #0f172a;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.4);
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      max-width: 420px;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 3rem;
+      padding: 1.6rem 1.2rem;
+      background: #f9fafb;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links,
+    .footer-social {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .footer-links a,
+    .footer-social a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-links a:hover,
+    .footer-social a:hover {
+      color: var(--primary);
+    }
+
+    .footer-copy {
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .shell {
+        padding-inline: 1.1rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cta-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Main">
-      <div class="brand">
-        <!-- Logo image: place NGSImage.jpg in the same folder -->
-        <img class="logo" src="NGS Logo.png" alt="Nakamura Grant Solutions logo">
-        <span>Nakamura Grant Solutions</span>
-      </div>
-
-      <nav class="menu" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="Services.html" aria-current="page">Services</a>
-        <a href="NCC.html">Nakamura Community Center</a>
-        <a class="cta" href="mailto:nakamuragrantsolutions@gmail.com">Schedule a consultation</a>
-      </nav>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="placeholder-logo.png" alt="Company Logo">
+      <span>Nakamura Grant Solutions</span>
     </div>
-  </header>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">How We Work</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Request Consultation</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <main>
-    <section class="hero" aria-labelledby="services-heading">
-      <div class="hero-inner container">
-        <img class="hero-image" src="NGS Logo.png" alt="Nakamura Grant Solutions — team and mission" width="160" height="160">
-        <div class="hero-copy">
-          <h1 id="services-heading" class="hero-title">Services that move the needle</h1>
-          <p class="hero-sub">Modular support across the full grant lifecycle. Choose a single sprint or end‑to‑end partnership.</p>
-        </div>
-      </div>
-    </section>
+<div class="shell">
 
-    <!-- Services -->
-    <section id="services" class="container" aria-label="Services list">
-      <div class="cards" role="list">
-        <article class="card" role="listitem" aria-labelledby="s1">
-          <div class="icon" aria-hidden="true">✍️</div>
-          <h3 id="s1">Organizational Strategy & Systems Design</h3>
-          <p>NGS helps organizations build structures that actually work—clear roles, transparent processes, and decision‑making systems rooted in fairness and accountability. We analyze existing workflows, identify bottlenecks, and design practical frameworks that improve efficiency, communication, and long‑term stability.</p>
-          <p class="meta">Proposal architecture • Logic models • Work plans • Budget narratives</p>
-        </article>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Restructure your organization for <span>clarity, stability, and sustainable growth.</span></h1>
 
-        <article class="card" role="listitem" aria-labelledby="s2">
-          <div class="icon" aria-hidden="true">🔎</div>
-          <h3 id="s2">Grant Writing & Narrative Development</h3>
-          <p>With deep experience in non‑profit storytelling and community‑centered communication, NGS crafts compelling grant proposals, impact reports, and organizational narratives. From research and framing to full proposal development, we help clients secure the resources they need to grow and sustain their work.</p>
-        </article>
-
-        <article class="card" role="listitem" aria-labelledby="s3">
-          <div class="icon" aria-hidden="true">🤝</div>
-          <h3 id="s3">Financial Strategy & Operational Planning</h3>
-          <p>Led by our CFO, NGS provides grounded, transparent financial guidance for organizations at every stage. We support clients with budgeting, forecasting, cost‑analysis, and long‑term sustainability planning—building financial systems that are both stable and adaptable.</p>
-        </article>
-
-        <article class="card" role="listitem" aria-labelledby="s4">
-          <div class="icon" aria-hidden="true">📊</div>
-          <h3 id="s4">Project Management & Implementation Support</h3>
-          <p>NGS offers hands‑on project leadership using agile, structured methodologies to keep initiatives moving with clarity and momentum. From multi‑phase rollouts to cross‑team coordination, we ensure projects stay aligned with goals, timelines, and stakeholder expectations.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-grid" role="contentinfo">
-      <div>
-        <div class="brand" style="margin-bottom:10px;">
-          <img class="logo" src="NGS Logo.png" alt="Nakamura Grant Solutions logo">
-          <span style="margin-left:10px;">Nakamura Grant Solutions</span>
-        </div>
-        <p class="meta" style="max-width:520px;">We help organizations secure funding without compromising their mission. Contact us to schedule a consultation or learn more about our services.</p>
-      </div>
-
-      <div class="links" aria-label="Footer links">
-        <strong style="color:var(--text);">Explore</strong>
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="Services.html">Services</a>
-        <a href="success.html">Success stories</a>
-        <a href="mailto:nakamuragrantsolutions@gmail.com">Schedule a consultation</a>
-      </div>
+      <p class="hero-subtitle">
+        We help mission‑driven organizations redesign their internal systems, strengthen funding readiness,
+        and communicate their value with clarity — using a blend of business strategy, resilience planning,
+        and market‑aligned messaging.
+      </p>
 
       <div>
-        <strong style="color:var(--text);">Connect</strong>
-        <div class="social" aria-hidden="true">
-          <a href="#" aria-label="Twitter">T</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Instagram">IG</a>
-        </div>
+        <span class="hero-pill">Strategic restructuring</span>
+        <span class="hero-pill">Funding alignment</span>
+        <span class="hero-pill">Operational clarity</span>
+        <span class="hero-pill">Stakeholder communication</span>
+      </div>
+
+      <br>
+
+      <a href="#contact" class="btn-primary">Request a consultation →</a>
+    </div>
+
+    <aside class="hero-panel">
+      <div class="panel-title">A multidisciplinary approach to organizational change</div>
+      <ul class="panel-list">
+        <li class="panel-item">
+          Business‑grounded restructuring that aligns programs, budgets, and decision‑making with real‑world constraints.
+        </li>
+        <li class="panel-item">
+          Systems‑thinking approaches that strengthen organizational resilience and long‑term sustainability.
+        </li>
+        <li class="panel-item">
+          Clear, audience‑ready messaging that helps boards, funders, and partners understand your direction.
+        </li>
+        <li class="panel-item">
+          Practical implementation support so changes don’t stall once the plan is written.
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Nakamura Grant Solutions</h2>
+    <p class="section-subtitle">
+      We work with nonprofits, social enterprises, and public‑sector teams who know something fundamental
+      needs to change — but don’t have the bandwidth to step back, map the system, and rebuild it while
+      the work continues.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2 class="section-title">Services</h2>
+    <p class="section-subtitle">We tailor every engagement to your organization’s needs, but most projects fall into these areas.</p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-title">Organizational Restructuring</div>
+        <p class="service-body">
+          We analyze your current structure, identify friction points, and redesign workflows, roles, and decision paths
+          to support clarity, accountability, and long‑term stability.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-title">Funding & Grant Readiness</div>
+        <p class="service-body">
+          We align your programs, budgets, and narratives so funders can clearly see the value and feasibility of your work.
+          This includes funding strategy, case‑for‑support development, and targeted grant preparation.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-title">Strategic Communication</div>
+        <p class="service-body">
+          We translate complex organizational work into clear, compelling messaging for boards, funders, partners,
+          and the communities you serve — without losing nuance.
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="container" style="margin-top:18px; display:flex; justify-content:space-between; align-items:center;">
-      <div style="color:var(--muted); font-size:13px;">© <span id="year"></span> Nakamura Grant Solutions. All rights reserved.</div>
-      <div style="color:var(--muted); font-size:13px;">Made with care.</div>
+  <!-- HOW WE WORK -->
+  <section id="process" class="section">
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-subtitle">
+      You’re juggling active work while trying to change how that work is structured. Our process is built to
+      be honest about constraints — time, staff capacity, and political realities inside your organization.
+    </p>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Rapid diagnostic</div>
+        <p class="step-body">
+          We start with a focused discovery: what’s working, what isn’t, and what’s non‑negotiable. You get an
+          outside read on structure, strategy, and funding — with concrete options, not a 60‑page report.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Strategic restructure plan</div>
+        <p class="step-body">
+          We co‑design a realistic plan to evolve your structure, programs, and funding approach in phases.
+          Each step is tied to specific outcomes, ownership, and timelines.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Support through implementation</div>
+        <p class="step-body">
+          As you roll changes out, we stay close enough to help adjust and communicate — to boards, staff,
+          and funders — so the work doesn’t stall at the first obstacle.
+        </p>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div>
+      <div class="cta-badge">For teams in transition</div>
+      <h2 class="cta-title">Let’s talk about the structure behind your next grant cycle.</h2>
+      <p class="cta-body">
+        If you’re staring down a major proposal, a funding shift, or restructuring that can’t be postponed,
+        we can help you clarify what needs to change — and how to communicate it to the people who sign off
+        on budgets and awards.
+      </p>
+    </div>
+    <div>
+      <a href="#contact" class="cta-button">Start with a 30‑minute conversation →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">Tell us what you’re trying to change, and we’ll help you map the next steps.</p>
+
+    <div class="contact-box">
+      <p><strong>Email:</strong> <a href="mailto:info@nakamuragrantsolutions.com">info@nakamuragrantsolutions.com</a></p>
+      <p><strong>What to include:</strong> A brief overview of your organization, current challenges, and any deadlines tied to funding or board decisions.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">How We Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-social">
+      <!-- Replace with your real LinkedIn URL -->
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <div class="footer-copy">
+      © <span id="year"></span> Nakamura Grant Solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
-
-
-
-
